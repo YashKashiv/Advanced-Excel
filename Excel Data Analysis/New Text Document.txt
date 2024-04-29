@@ -1,0 +1,68 @@
+                           *****DATA CLEANING*****
+
+First we see any null or duplicate value by selecting whole column and add filter and see and null or duplicate value
+
+we found like W and M so we select M with filter and press CTRL+F and replace all M with Men same process for W Women also
+
+then we found in Qty where we changed One to 1 and Two to 2 with CRTL+F find and replace
+
+
+                           *****DATA PROCESSING*****
+
+We have a question about the relationship between gender and age for that we will process that 2 columns age and gender so i will create a new column "age group" and fill it with the logic if Ages 50 and above: "Senior"
+Ages between 30 and 49: "Adult"
+Ages below 30: "Teenager"
+
+i will just paste this logic in chatgpt and copy the code BUT the code is littlebit wrong they gave column name of age is A i corrected it with E then the code will be like below
+=IF(E2>=50, "Senior", IF(E2>=30, "Adult", "Teenager"))
+to fill instantly all the rows of that column simply double click on right-downside corner of that cell
+
+Now that values are showing by calculating the formula which can be resulted as slow the processing so what we do is i will first copy by selecting all the generated values with CTRL + C and right click Paste as value only NOT NECESSARY BUT RECOMMANDED
+
+We have a question related to Months only for that we will also extract the Months from Date and create a column months and give below code to extract months
+=TEXT(G2, "mmmm")
+and copy generated values and paste as values only
+and if dates are not in sequence then select date format as English(India)
+
+
+                          *****Data Analysis*****
+
+To do analysis of given data we have to create a PIVOT TABLE which is in INSERT and create a sales according to month we will select month in rows and the count of orederid and sum of amount in values our table will be ready
+
+in design of pivot table i off the grand total of rows and columns because it is no use for me
+
+after that select all the data in pivot table you generated and select PivotTable Analyze there u can see the differenet types of chart you can use to show data in graphical way to understand quickly
+
+to hide the buttons on chart to beautify Right-Click on button and click on hide all fields button AND from plus sign you can add chart title and show/hide gridlines and other various things
+
+ON Chart we can drag the things and resize them
+
+Now in left side there is Currency values which numbers can be complicated to read millions or lakhs so we will change it by Double-Click on it the Format Axis will be shown on right side at very downside there opyion of Numbers click on it in Format Code paste this below code to change lakhs values to Millions
+0.00,,"M"
+
+Now we will copy that chart and ctreate ner sheet and name it annual report and paste that chart into it and in first cell we will also name it and select all the cell to U-1 and Select Merge & Center to look good
+
+And to look more good i will show/hide the grid lines from view and i also selected visible cells and give them color grey to look more good report
+
+***IMPORTANT***
+In future if data changes then for chart to update we have to go in PivotChart Analyze and click on Refresh
+
+Now we will insert new pivot table for new sheet to make chart on Men and Women shopping and of the grandtotal on design then select all the data and click on PivotTable Analyze then click on Pivot Chart and select 3D Pie chart for good representation then rearrange it how you like and hise all the buttons then to see the data on pie click on plus sign and add data labels and we can make it more beautiful by click on design and select a good design for our pie to look
+
+Another one Pivot Table by Insert and click on pivot table for a new sheet and data we select is Status and Order ID then off the grand total then select the data and click on PivotTable Analyze and select the PivotChart and select the chart you want i this case i will select Pie Chart to represent the data beautifully To make it more understandable i will first off the buttons then double cluck on slices to open Format Data Point and from series option i will change the Angle of First Slice and Point Explosion
+
+Now same steps for a new pivot table from data to create a new sheet AND in this sheet we will make chart to represent the top 5 or 10 states with high sales for this first wee select the ship-state and amount and then we sort from largest to smallest by left click on Sum of Amount data and click on SORT from largest to smallest then it will be sorted
+After that click on ship-state table and click on filter by top10 and make it 5 then it will filter it by Top5
+Then select all the table data and click on PivotChart Analyze then click on PivotChart select your chart then beautify it and i changed the number to millions by clicking on it then Format Chart Are in Number write below code
+0.0,,"M"
+
+Now we will create a new sheet named age and gender by click on insert click on pivot table then off the grand total from the design then i will take data age group in row and gender in column and order id in values
+Now to see the percentage values of men and women just right click on orders id values and click on show values as then click on % of grand values
+
+Now last pivot chart ny click on insert then pivot table then select data of channels and order id to see what percentage of oreders came from which channel right click on order id then select show values as then select % of grand total and now to decrease decimal values first select order id data then in home below percentage there is decrease decimal button click on it
+Then select all the generated data click on PivotChart Analyze click on PivotChart select pie hide all buttons on chart and beautify it
+
+NOW USING SLICER means if we select one a value from a chart then it affects other charts also
+To Insert Slicer select any table (charts should be pivot table) click on PivotChart Analyze click on Insert Slicer then select the data which filters you want to show when selected in my case i selected Month Channel AFTER THAT right click on any chart and select report connections select all the sheets to sync the data in every slicer
+
+NOW EVERYTIME YOU SELECT THE FILTER IT WILL REPRESENT THE ALL DATA IN CHART ACCORDING TO THAT
